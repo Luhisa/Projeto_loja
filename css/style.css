@@ -18,12 +18,38 @@ main {
   padding: 20px;
 }
 
-header {
-  display: none;
+h1 {
+  font-family: "Lato", Helvetica, Arial;
+  margin-bottom: 40px;
 }
 
-.cart-area {
+header {
   display: none;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 60px;
+  position: fixed;
+  background-color: #399ade;
+  align-items: center;
+}
+
+.menu-openner {
+  margin-right: 15px;
+  font-size: 26px;
+  padding: 5px 20px;
+  border-radius: 5px;
+}
+
+.menu-openner span {
+  margin-right: 10px;
+}
+
+.menu.close {
+  width: 32;
+  height: 32px;
+  display: none;
+  font-size: 30px;
 }
 
 .menu-close {
@@ -31,10 +57,6 @@ header {
 }
 
 .models {
-  display: none;
-}
-
-.modeloWindowArea {
   display: none;
 }
 
@@ -105,4 +127,61 @@ header {
   font-size: 13px;
   color: #555;
   margin-top: 10px;
+}
+
+aside {
+  background-color: #9ccbe6;
+  width: 0vw;
+  overflow: hidden;
+  font-family: "Lato", Helvetica, Arial;
+}
+
+.cart-area {
+  padding: 20px;
+}
+
+.modeloWindowArea {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgb(255, 255, 255, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+}
+
+/*Media Queries*/
+@media (max-width: 1000px) {
+  .modelo-area {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 840px) {
+  header {
+    display: flex;
+  }
+
+  main {
+    padding-top: 80px;
+  }
+
+  aside {
+    width: auto;
+    position: fixed;
+    left: 100vw;
+    top: 0;
+    bottom: 0;
+  }
+
+  .cart-area {
+    width: 1vw;
+  }
+
+  .menu-close {
+    display: block;
+  }
 }
